@@ -16,7 +16,8 @@ function App() {
       <Navbar />
       <div>
         <Link to="/restaurant">Rest</Link><br></br>
-        <Link to="/">Home</Link>
+        <Link to="/">Home</Link><br></br>
+        <Link to="/form">Form test</Link>
 
       </div>
 
