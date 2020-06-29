@@ -26,7 +26,7 @@ class Hotellists extends React.Component {
             <div>
                 <div id="hotelImg"></div>
             </div>
-            <h1>hotel 1</h1>
+            <h1>hotels</h1>
 
         </div>
     )}
