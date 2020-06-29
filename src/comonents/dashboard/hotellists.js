@@ -1,5 +1,5 @@
 import React from "react"
-import {db} from '../firebase'
+import {db} from './firebase'
 
 
 
@@ -11,14 +11,14 @@ class Hotellists extends React.Component {
  
     }
 
-    // showHotels() {
-    //     db.collection("restaurants")
-    //         .get()
-    //         .then(querySnapshot => {
-    //             const data = querySnapshot.docs.map(doc => doc.data());
-    //             console.log(data); // array of cities objects
-    //         });
-    // }
+    showHotels() {
+        db.collection("restaurants")
+            .get()
+            .then(querySnapshot => {
+                const data = querySnapshot.docs.map(doc => doc.data());
+                console.log(data); // array of cities objects
+            });
+    }   
 
     render(){
         return (
