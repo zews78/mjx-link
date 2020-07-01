@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './comonents/layout/navbar'
-import Hotels from './comonents/dashboard/hotels';
+import Hotels from './pages/dashboard/hotels';
 import Restaurant from './pages/restaurant';
 import Form from './pages/form';
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Itemlist from '../comonents/item/itemlist'
-import {db} from '../firebase'
+import {db} from './firebase'
 class Restaurant extends React.Component {
    constructor(props){
       super(props);
@@ -38,7 +38,7 @@ class Restaurant extends React.Component {
             <h1>this is indivisual restourant:</h1>
             <button height="20px" onClick={this.addUser}>Add +</button>
             <button height="20px" onClick={this.showHotels}>show</button>
-
+            
             <Itemlist />
    
          </div>
