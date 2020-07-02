@@ -2,7 +2,7 @@ import React from "react"
 import {db} from '../firebase'
 import './hotellists.css'
 // import Restaurant from './pages/restaurant';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,14 +11,18 @@ class Hotellists extends React.Component {
        super(props);
        this.state ={
            hotels: [],
-           uids: []
+           uids: [],
+           totalList: []
        };
     //    console.log(this.state.users);
     //    this.showHotels= this.showHotels.bind(this);
         this.handleClick = this.handleClick.bind(this); 
     }
 
+
+
     handleClick(){
+
         
         // db.collection("restaurants").doc()
         // .get()
@@ -39,7 +43,12 @@ class Hotellists extends React.Component {
         console.log(this.state.hotels, "recieved props");
     }
 
-    componentDidMount(){
+    componentDidMount(prevState){
+
+
+
+
+
         // var storage = [{}];
         db.collection("restaurants")
             .get()
@@ -52,7 +61,7 @@ class Hotellists extends React.Component {
                     this.setState({uids:uid});
 
 
-                    // console.log(doc());
+                    console.log(querySnapshot);
 
                     // doc.data() is never undefined for query doc snapshots
                     // console.log(doc.id, " => ", doc.data());
@@ -67,9 +76,21 @@ class Hotellists extends React.Component {
 
                 // console.log(uid);
             // });
+            // if(prevState.totalList !== this.state.totalList) {
+
+                // this.setState({totalList: totalData});
+            // }
+
+
             }
         
-
+    componentDidUpdate(){
+        // var totalData = this.state.hotels.map(item =>{
+        //     item.uid = this.state.uids[0]
+        //     // return 0;
+        // })
+        // console.log(totalData);
+    }
         
     // shouldComponentUpdate(){
     //     // console.log(this.state);
@@ -77,15 +98,19 @@ class Hotellists extends React.Component {
     // }
 
     render() {
-        console.log(this.state.uids);
+
+        var i = 0;
+        // console.log(this.state.totalList, 'hola');
         // const { hotels } = this.state;
 
         return (
             <div>
             {/* {this.state.users.forEach(hotel => { */}
+                {/* {var i=0;} */}
+                
                 {this.state.hotels.map(hotel => (
                     // <BrowserRouter>
-                    <Link to={"/restaurant/" + hotel.name}>
+                    <Link to={"/restaurant/" + this.state.uids[i]}>
                     <div className='dashboard' id='gama' onClick={this.handleClick}>
                         <div id="hotelImg"></div>
                         <div id="hotelData">
@@ -93,10 +118,12 @@ class Hotellists extends React.Component {
                             <p>{hotel.location}</p>
                         </div>
                     </div>
+                    <p id="disturbance">{i++}</p>
                     </Link>
-                    // </BrowserRouter>
                     
-
+                    // </BrowserRouter>
+                    // {i++;}
+                    
                 ))}
                 
             {/* // });} */}

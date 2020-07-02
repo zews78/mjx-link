@@ -8,7 +8,9 @@
     margin:10px;
     padding: 10px;
 }
-
+#disturbance{
+    display: none;
+}
 #hotelImg{
     margin-left: 10px;
     height: 120px;

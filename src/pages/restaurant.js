@@ -1,13 +1,15 @@
 import React from 'react'
-import Itemlist from '../comonents/item/itemlist'
+// import Itemlist from '../comonents/item/itemlist'
 import {db} from './firebase'
 class Restaurant extends React.Component {
    constructor(props){
       super(props);
-      console.log(props.match.params.id, 'ehllo');
+      // console.log(props.match.params.id, 'ehllo');
       this.addUser= this.addUser.bind(this);
       // this.showHotels= this.showHotels.bind(this);
-
+      this.state ={
+         indivisualData: []
+      }
    }
    addUser(){
       db.collection("test01").add({
@@ -23,7 +25,24 @@ class Restaurant extends React.Component {
          console.error("Error adding document: ", error);
      });
    }
-   
+
+   componentDidMount(){
+      console.log(this.props.match.params.id, 'prams');
+      db.collection("restaurants").doc(this.props.match.params.id)
+      .get()
+      .then(doc => {
+         // var iData = doc.data();
+         this.setState({indivisualData: doc.data()});
+         
+         console.log(doc.data());
+         
+         // const productData = querySnapshot.docs.map(doc=>doc.data());
+         // console.log(productData); // This is the restaurant
+         // console.log(querySnapshot);
+      });
+   }
+
+
    // showHotels(){
    //    db.collection("restaurants")
    //    .get()
@@ -33,13 +52,32 @@ class Restaurant extends React.Component {
    //    });
    // }
    render(){
+      var items = this.state.indivisualData.items;
+      //showing can't read prop. of undefined
+      console.log(items[0].get('price'), 'bola');
+      //   const { indi } = this.state.in;
+
       return (
          <div>
-            <h1>this is indivisual restourant:</h1>
-            <button height="20px" onClick={this.addUser}>Add +</button>
-            <button height="20px" onClick={this.showHotels}>show</button>
+            <div id="head">
+               <h4>{this.state.indivisualData.name}</h4>
+               <code>{this.state.indivisualData.location}</code>
+               <p>description</p>
+            </div>
+            <h4>Recommended</h4>
+            <div id='item'>
+               <div id='item_img'></div>
+               <div id="item_data">
+                  {/* <h5>{this.state.indivisualData.items[0].map(item_name)}</h5> */}
+               </div>
+            </div>
+
+
             
-            <Itemlist />
+            {/* <button height="20px" onClick={this.addUser}>Add +</button>
+            <button height="20px" onClick={this.showHotels}>show</button> */}
+            
+            {/* <Itemlist /> */}
    
          </div>
       )
