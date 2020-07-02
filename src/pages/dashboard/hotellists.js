@@ -84,8 +84,8 @@ class Hotellists extends React.Component {
             <div>
             {/* {this.state.users.forEach(hotel => { */}
                 {this.state.hotels.map(hotel => (
-                    <BrowserRouter>
-                    <Link to={"/restaurant/" + this.state.uids}>
+                    // <BrowserRouter>
+                    <Link to={"/restaurant/" + hotel.name}>
                     <div className='dashboard' id='gama' onClick={this.handleClick}>
                         <div id="hotelImg"></div>
                         <div id="hotelData">
@@ -94,7 +94,7 @@ class Hotellists extends React.Component {
                         </div>
                     </div>
                     </Link>
-                    </BrowserRouter>
+                    // </BrowserRouter>
                     
 
                 ))}

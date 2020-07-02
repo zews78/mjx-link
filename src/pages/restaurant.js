@@ -4,7 +4,7 @@ import {db} from './firebase'
 class Restaurant extends React.Component {
    constructor(props){
       super(props);
-      console.log(props);
+      console.log(props.match.params.id, 'ehllo');
       this.addUser= this.addUser.bind(this);
       // this.showHotels= this.showHotels.bind(this);
 
