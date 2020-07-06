@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './comonents/layout/navbar'
@@ -15,10 +15,10 @@ function App() {
     <div className="App">
       <Navbar />
       <div>
-        <Link to="/restaurant">Rest</Link><br></br>
+        {/* <Link to="/restaurant">Rest</Link><br></br>
         <Link to="/">Home</Link><br></br>
-        <Link to="/form">Form test</Link>
-
+        <Link to="/form">Form test</Link> */}
+        
       </div>
 
       <Switch>

@@ -1,6 +1,7 @@
 import React from 'react'
 // import Itemlist from '../comonents/item/itemlist'
 import {db} from './firebase'
+// import Items from './dashboard/items';
 class Restaurant extends React.Component {
    constructor(props){
       super(props);
@@ -54,9 +55,34 @@ class Restaurant extends React.Component {
    render(){
       var items = this.state.indivisualData.items;
       //showing can't read prop. of undefined
-      console.log(items[0].get('price'), 'bola');
-      //   const { indi } = this.state.in;
+      // var obj = JSON.parse(items).toString();
+      if(items){
+         // var Items = iTems.items;
+         // Items = <Items/>;
+         console.log(items.length, 'here');
 
+         var Items= items.map(item =>{
+            return(
+            <div id='item'>
+               <div id='item_img'></div>
+   
+               <div id="item_data">
+                  <h5>{item.item_name}</h5>
+                  <p>{item.description}</p>
+                  <b>{item.price}</b>
+               </div>
+            </div>
+
+            )
+         });
+      }
+
+
+
+
+
+      //   const { indi } = this.state.in;
+      // var i =0;
       return (
          <div>
             <div id="head">
@@ -65,12 +91,15 @@ class Restaurant extends React.Component {
                <p>description</p>
             </div>
             <h4>Recommended</h4>
-            <div id='item'>
-               <div id='item_img'></div>
-               <div id="item_data">
-                  {/* <h5>{this.state.indivisualData.items[0].map(item_name)}</h5> */}
-               </div>
-            </div>
+            {items?<div>
+
+            {Items}
+            </div>:<div>mast khana aa rela h</div>}
+
+               
+            
+               
+            
 
 
             

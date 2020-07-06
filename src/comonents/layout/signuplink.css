@@ -1,0 +1,21 @@
+.flex-club{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    margin-right: 15px;
+    /* float: right; */
+}
+.box{
+    background-color: khaki;
+    width: 80px;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+    
+}
+.box:hover{
+    background-color: lawngreen;
+    transition:0.4s ease;
+
+}

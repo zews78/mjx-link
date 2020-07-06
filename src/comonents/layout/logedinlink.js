@@ -3,10 +3,10 @@ import {NavLink} from 'react-router-dom'
 
 const logedinlink = ()=>{
     return(
-        <div>
-            <span><NavLink to='/'>logout</NavLink></span>
-            <span><NavLink to='/cart'>cart</NavLink></span>
-            <span><NavLink to='/profile'>profile</NavLink></span>
+        <div className='flex-club'>
+            <div className="box"><NavLink to='/'>logout</NavLink></div>
+            <div className="box"><NavLink to='/cart'>cart</NavLink></div>
+            <div className="box"><NavLink to='/profile'>profile</NavLink></div>
             
         </div>
     )

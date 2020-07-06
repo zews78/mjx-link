@@ -1,13 +1,13 @@
 import React from "react"
 import {NavLink} from 'react-router-dom'
-
+import "./signuplink.css"
 
 const Signuplink = ()=>{
     return(
-        <div>
-            <span><NavLink to='/'>Login</NavLink></span>
-            <span><NavLink to='/signup'>Signup</NavLink></span>
-            <hr></hr>
+        <div className="flex-club">
+            <NavLink to='/'><div className="box">Login </div></NavLink>
+            <NavLink to='/signUp'><div className="box">Signup</div></NavLink>
+     
 
         </div>
     )

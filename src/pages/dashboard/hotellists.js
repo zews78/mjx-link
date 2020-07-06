@@ -61,7 +61,7 @@ class Hotellists extends React.Component {
                     this.setState({uids:uid});
 
 
-                    console.log(querySnapshot);
+                    // console.log(querySnapshot);
 
                     // doc.data() is never undefined for query doc snapshots
                     // console.log(doc.id, " => ", doc.data());
@@ -100,22 +100,25 @@ class Hotellists extends React.Component {
     render() {
 
         var i = 0;
-        // console.log(this.state.totalList, 'hola');
+        // console.log(this.state.hotels, 'hola');
         // const { hotels } = this.state;
 
         return (
+            <>
+            {this.state.hotels?
             <div>
             {/* {this.state.users.forEach(hotel => { */}
                 {/* {var i=0;} */}
                 
+                
                 {this.state.hotels.map(hotel => (
                     // <BrowserRouter>
                     <Link to={"/restaurant/" + this.state.uids[i]}>
-                    <div className='dashboard' id='gama' onClick={this.handleClick}>
+                    <div className='dashboard' id='gama' onClick={this.handleClick} key={this.state.uids[i]}>
                         <div id="hotelImg"></div>
                         <div id="hotelData">
-                            <h2>{hotel.name}</h2>
-                            <p>{hotel.location}</p>
+                            <h2 id="hotel-name">{hotel.name}</h2>
+                            <p id="hotel-location">{hotel.location}</p>
                         </div>
                     </div>
                     <p id="disturbance">{i++}</p>
@@ -129,7 +132,9 @@ class Hotellists extends React.Component {
             {/* // });} */}
 
 
-            </div>
+            </div>:
+            <div>loding...</div>}
+            </>
         )
     }
 }
