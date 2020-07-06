@@ -1,0 +1,64 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.back_search{
+    margin:5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#item{
+    /* background-color: khaki; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    width: 25%;
+    padding: 5px;
+    border-style: solid;
+    border-color: #f0f0f0;
+    border-radius: 12px;
+    border-width: 2px;
+    margin:5px;
+    /* line-height: 20px; */
+}
+@media screen and (max-width: 500px) {
+    #item{
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        /* align-items: center; */
+        margin: auto;
+        line-height: 7px;
+
+    }
+    #item_data{
+        margin-left: 25px;
+        text-align: left;
+    }
+}
+#location{
+    font-weight:300 ;
+}
+#description{
+    font-weight: lighter;
+}
+#item:hover{
+    border-style: solid;
+    border-color: #a7ff83;
+}
+#head{
+    /* margin-top: 5px; */
+    background-color: #071a52;
+    color: white;
+    padding: 5px;
+}
+#recommended{
+    text-align: left;
+}
+#card-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+#item_data{
+    /* width: 33%; */
+}

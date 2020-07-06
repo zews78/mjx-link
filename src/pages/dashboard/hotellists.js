@@ -106,7 +106,7 @@ class Hotellists extends React.Component {
         return (
             <>
             {this.state.hotels?
-            <div>
+            <div id="hotel-lists">
             {/* {this.state.users.forEach(hotel => { */}
                 {/* {var i=0;} */}
                 

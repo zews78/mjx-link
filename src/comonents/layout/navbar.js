@@ -13,7 +13,7 @@ const Navbar = ()=>{
             <img id="menu-icon" height="22px" width="auto" alt="menu" src={Menu} />
             <NavLink to="/">
             <div id='company-log'>
-                <img id="company-ico" alt="icon" height="22px" width="auto" src={Menu}/>
+                <img id="company-ico" alt="icon" height="22px" width="auto" src={process.env.PUBLIC_URL + '/gps.png'}/>
                 <h3 id="company-header">Med GO</h3>
             </div>
             </NavLink>
@@ -32,7 +32,7 @@ const Navbar = ()=>{
 
 
         </div>
-        <hr></hr>
+        
         </>
     )
 }

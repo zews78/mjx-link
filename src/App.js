@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './comonents/layout/navbar'
 import Hotels from './pages/dashboard/hotels';
-import Restaurant from './pages/restaurant';
+import Restaurant from './pages/dashboard/restaurant';
 import Form from './pages/form';
 
 

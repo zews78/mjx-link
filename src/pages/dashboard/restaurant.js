@@ -1,6 +1,10 @@
 import React from 'react'
 // import Itemlist from '../comonents/item/itemlist'
-import {db} from './firebase'
+import {db} from '../firebase'
+import "./restaurant.css"
+import { Link } from 'react-router-dom';
+
+// import {back} from '/public/back.png'
 // import Items from './dashboard/items';
 class Restaurant extends React.Component {
    constructor(props){
@@ -64,12 +68,11 @@ class Restaurant extends React.Component {
          var Items= items.map(item =>{
             return(
             <div id='item'>
-               <div id='item_img'></div>
-   
+               <div id='item_img'><img width="100px" alt="img" src={item.item_img}></img></div>
                <div id="item_data">
-                  <h5>{item.item_name}</h5>
-                  <p>{item.description}</p>
-                  <b>{item.price}</b>
+                  <h4 id="item-name">{item.item_name}</h4>
+                  <p id="item-des">{item.description}</p>
+                  <b id="item-price">{item.price}</b>
                </div>
             </div>
 
@@ -85,13 +88,19 @@ class Restaurant extends React.Component {
       // var i =0;
       return (
          <div>
-            <div id="head">
-               <h4>{this.state.indivisualData.name}</h4>
-               <code>{this.state.indivisualData.location}</code>
-               <p>description</p>
+            <div className='back_search'>
+               <Link to="/">
+                  <img className="back-btn" height="21px" alt="back" src={process.env.PUBLIC_URL + '/back.png'}></img>
+               </Link>
+               <img className='search-btn' height="21px" alt="search" src={process.env.PUBLIC_URL + "/magnifying-glass.png"}></img>
             </div>
-            <h4>Recommended</h4>
-            {items?<div>
+            <div id="head">
+               <h3>{this.state.indivisualData.name}</h3>
+               <p id="location">{this.state.indivisualData.location}</p>
+               <p id="description">description</p>
+            </div>
+            <h4 id="recommended">Recommended</h4>
+            {items?<div id="card-list">
 
             {Items}
             </div>:<div>mast khana aa rela h</div>}

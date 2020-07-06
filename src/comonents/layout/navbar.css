@@ -3,6 +3,7 @@ body{
     padding: 0px;
 }
 #navbar{
+    /* background-color: #17b978; */
     display: flex;
     justify-content: space-between;
 }
@@ -16,8 +17,8 @@ body{
     float: right;
 }
 #company-log{
-    width: 140px;
-    background-color: blueviolet;
+    width: 112px;
+    /* background-color: blueviolet; */
     display: flex;
     flex-wrap: wrap;
     
